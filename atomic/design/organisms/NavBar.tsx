@@ -22,7 +22,7 @@ export default function NavBar() {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-        <h1 style={{ color: "#e50914", margin: 0 }}>NETFLIX</h1>
+        <h1 style={{ color: "#e50914", margin: 0 }}>NETFLIS</h1>
 
         <div style={{ display: "flex", gap: 18 }}>
           <Button label="Inicio" />
@@ -35,20 +35,17 @@ export default function NavBar() {
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-
         <div style={{ display: "flex", alignItems: "center", gap: 10, position: "relative" }}>
-          
-          <img
-            src="/serch.png"
-            alt="buscar"
+          <span
             style={{
-              width: 24,
+              fontSize: "24px",
               cursor: "pointer",
             }}
             onClick={() => setShowSearch(!showSearch)}
-          />
+          >
+            ⌕
+          </span>
 
-          {/* SEARCH INPUT ANIMADO */}
           <input
             type="text"
             placeholder="Títulos, personas, géneros"
@@ -61,8 +58,8 @@ export default function NavBar() {
               outline: "none",
               width: showSearch ? "220px" : "0px",
               opacity: showSearch ? 1 : 0,
-              transition: "width 0.35s ease, opacity 0.25s ease, padding 0.35s ease",
-            }}
+              transition: "width 0.35s ease, opacity 0.25s ease, padding 0.35s ease", 
+            }} 
           />
         </div>
 
@@ -71,13 +68,13 @@ export default function NavBar() {
         <img
           src="/campanita.png"
           alt="campanita"
-          style={{ width: 24, height: 24, objectFit: "cover", filter: "invert(1)", cursor: "pointer" }}
+          style={{ width: '18%', height: 30, objectFit: "fill", cursor: "pointer" }}
         />
 
         <img
           src="/user.png"
           alt="usuario"
-          style={{ width: 26, height: 26, objectFit: "cover", cursor: "pointer" }}
+          style={{ width: '40%', height: 38, objectFit: "fill", cursor: "pointer" }}
         />
       </div>
     </header>

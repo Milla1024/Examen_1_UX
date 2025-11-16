@@ -18,8 +18,21 @@ export default function CarouselNetflix({ title, items }: Props) {
 
   const scroll = (direction: "left" | "right") => {
     if (!containerRef.current) return;
+
+    const container = containerRef.current;
     const amount = direction === "left" ? -400 : 400;
-    containerRef.current.scrollBy({ left: amount, behavior: "smooth" });
+
+    container.scrollBy({ left: amount, behavior: "smooth" });
+
+    setTimeout(() => {
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      if (container.scrollLeft <= 0) {
+        container.scrollTo({ left: maxScroll, behavior: "smooth" });
+      } else if (container.scrollLeft >= maxScroll) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      }
+    }, 200);
   };
 
   return (
