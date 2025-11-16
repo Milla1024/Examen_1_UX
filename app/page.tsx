@@ -14,15 +14,24 @@ export default function Page() {
     "Explora por idiomas"
   ];
 
+  const shuffleArray = (array: any[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
   const baseItems = [
-    { id: 1, image: "https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg", title: "Título 1" },
-    { id: 2, image: "https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg", title: "Título 2" },
-    { id: 3, image: "https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg", title: "Título 3" },
-    { id: 4, image: "https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg", title: "Título 4" },
-    { id: 5, image: "https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg", title: "Título 5" },
-    { id: 6, image: "https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg", title: "Título 6" },
-    { id: 7, image: "https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg", title: "Título 7" },
-    { id: 8, image: "https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg", title: "Título 8" },
+    { id: 1, image: "https://cdn.moviestillsdb.com/storage/posters/de/6604188_150.jpg", title: "Título 1" },
+    { id: 2, image: "https://image.tmdb.org/t/p/w500/8c4a8kE7PizaGQQnditMmI1xbRp.jpg", title: "Título 2" },
+    { id: 3, image: "https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg", title: "Título 3" },
+    { id: 4, image: "https://image.tmdb.org/t/p/w500/gavyCu1UaTaTNPsVaGXT6pe5u24.jpg", title: "Título 4" },
+    { id: 5, image: "https://admin.itsnicethat.com/images/3CzWUmmXvOtHmdH0J1VNY-f9riA=/254910/format-webp%7Cwidth-1440/4._Oppenheimer.jpg", title: "Título 5" },
+    { id: 6, image: "https://cdn.moviestillsdb.com/storage/posters/e2/29644189_150.jpg", title: "Título 6" },
+    { id: 7, image: "https://cdn.moviestillsdb.com/storage/posters/c5/30144839_150.jpg", title: "Título 7" },
+    { id: 8, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvgNmlgodRbY_8LiH6R5UrSiMiB0q9PAqLmA&s", title: "Título 8" },
   ];
 
   const carouselRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
@@ -141,7 +150,7 @@ export default function Page() {
         >
           <CarouselNetflix
             title={category}
-            items={baseItems}
+            items={shuffleArray(baseItems)} 
           />
         </div>
       ))}
