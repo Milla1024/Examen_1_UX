@@ -4,7 +4,7 @@ import './globals.css';
 
 export default function Page() {
   const categories = [
-    "Inicio",
+    "Destacado",
     "Series",
     "Películas",
     "Novedades populares",
@@ -24,7 +24,7 @@ export default function Page() {
   ];
 
   return (
-    <main style={{ background: '#0e0e0eff', minHeight: '100vh', color: '#fff', position: "relative" }}>
+    <main style={{ background: '#0e0e0eff', minHeight: '100vh', color: '#fff', position: "relative", paddingBottom: "40px" }}>
 
       <header
         style={{
@@ -36,12 +36,13 @@ export default function Page() {
           padding: "20px",
           display: "flex",
           alignItems: "center",
+          justifyContent: "space-between",  // Added for better spacing on smaller screens
         }}
       >
         <NavBar />
       </header>
 
-      <section style={{ position: "relative" }}>
+      <section style={{ position: "relative", width: "100%" }}>
         <div style={{ width: "100%", height: "420px", position: "relative", overflow: "hidden" }}>
 
           <img
@@ -121,6 +122,7 @@ export default function Page() {
           items={baseItems}
         />
       ))}
+
       <footer style={{ backgroundColor: '#141414', color: '#B3B3B3', padding: '40px 20px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px' }}>
 
@@ -150,10 +152,9 @@ export default function Page() {
         </div>
 
         <div style={{ marginTop: '20px', textAlign: 'center', color: '#B3B3B3' }}>
-          <p>&copy; 1997-2025 Netflis, Inc.</p>
+          <p>&copy; 1997-2025 Netflix, Inc.</p>
         </div>
       </footer>
     </main>
-
   );
 }

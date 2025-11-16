@@ -17,7 +17,7 @@
   scroll-behavior: smooth;
   gap: 14px;
   padding: 12px 8px;
-  pointer-events: auto; 
+  pointer-events: auto;
 }
 
 .carousel::-webkit-scrollbar {
@@ -34,16 +34,16 @@
   border-radius: 6px;
   background: #111;
   position: relative;
-  z-index: 10; 
+  z-index: 10;
   transition: transform 0.18s ease-in-out;
   overflow: hidden;
   pointer-events: auto;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .card:hover {
   transform: scale(1.06);
-  z-index: 10; 
+  z-index: 11;
 }
 
 .image {
@@ -68,7 +68,8 @@
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 11; /* Asegura que los botones estén por encima de las tarjetas */
+  pointer-events: none; /* Por defecto, no bloquean la interacción */
 }
 
 .navBtn {
@@ -79,4 +80,9 @@
   font-size: 24px;
   cursor: pointer;
   transition: background-color 0.3s;
+  pointer-events: auto; /* Asegura que los botones sean interactivos solo cuando pasas el mouse */
+}
+
+.buttons:hover {
+  pointer-events: auto; /* Habilita la interacción solo cuando el cursor está sobre los botones */
 }

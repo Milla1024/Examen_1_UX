@@ -1,30 +1,18 @@
 "use client";
 import { useState } from "react";
 import Button from "../atoms/Button";
+import styles from "./NavBar.module.css"; // Importar el archivo CSS del componente
 
 export default function NavBar() {
   const [showSearch, setShowSearch] = useState(false);
 
   return (
-    <header
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "10px 20px",
-        background: "rgba(0,0,0,0.5)",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        zIndex: 100,
-        boxSizing: "border-box",
-      }}
-    >
+    <header className={styles.header}>
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-        <h1 style={{ color: "#e50914", margin: 0 }}>NETFLIS</h1>
+        <h1 style={{ color: "#e50914", margin: 0, fontSize: "1.6rem" }}>NETFLIS</h1>
 
-        <div style={{ display: "flex", gap: 18 }}>
+        {/* Contenedor de botones, con clase para estilo y responsividad */}
+        <div className={styles["button-container"]}>
           <Button label="Inicio" />
           <Button label="Series" />
           <Button label="Películas" />
@@ -34,47 +22,51 @@ export default function NavBar() {
         </div>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, position: "relative" }}>
-          <span
-            style={{
-              fontSize: "24px",
-              cursor: "pointer",
-            }}
-            onClick={() => setShowSearch(!showSearch)}
-          >
-            ⌕
-          </span>
+      {/* Contenedor de los íconos a la derecha */}
+      <div className={styles["right-icons"]}>
+        <span
+          style={{
+            fontSize: "24px",
+            cursor: "pointer",
+            color: "#fff",
+          }}
+          onClick={() => setShowSearch(!showSearch)}
+        >
+          ⌕
+        </span>
 
-          <input
-            type="text"
-            placeholder="Títulos, personas, géneros"
-            style={{
-              background: "rgba(0,0,0,0.7)",
-              border: "1px solid white",
-              color: "white",
-              padding: showSearch ? "6px 10px" : "6px 0px",
-              borderRadius: 4,
-              outline: "none",
-              width: showSearch ? "220px" : "0px",
-              opacity: showSearch ? 1 : 0,
-              transition: "width 0.35s ease, opacity 0.25s ease, padding 0.35s ease", 
-            }} 
-          />
-        </div>
+        <input
+          type="text"
+          placeholder="Títulos, personas, géneros"
+          className={`${styles["search-bar"]} ${showSearch ? styles.expanded : ""}`}
+        />
 
         <Button label="Niños" />
 
         <img
           src="/campanita.png"
           alt="campanita"
-          style={{ width: '18%', height: 30, objectFit: "fill", cursor: "pointer" }}
+          style={{
+            width: "18%",
+            height: 30,
+            objectFit: "contain",
+            cursor: "pointer",
+            maxWidth: "40px",
+            maxHeight: "40px",
+          }}
         />
 
         <img
           src="/user.png"
           alt="usuario"
-          style={{ width: '40%', height: 38, objectFit: "fill", cursor: "pointer" }}
+          style={{
+            width: "40%",
+            height: 38,
+            objectFit: "contain",
+            cursor: "pointer",
+            maxWidth: "40px",
+            maxHeight: "40px",
+          }}
         />
       </div>
     </header>
