@@ -1,4 +1,3 @@
-/* --- modified to Netflix-like base --- */
 :root{
   --netflix-red: #e50914;
   --bg: #000;
@@ -7,18 +6,15 @@
 }
 
 @media (max-width: 768px) {
-  /* Ocultar los botones del lado izquierdo */
   header > div:first-child {
     display: none;
   }
 
-  /* Asegurarse de que los íconos de búsqueda, campanita y usuario sigan apareciendo */
   header > div:last-child {
     flex-grow: 1;
-    justify-content: flex-end; /* Alineamos los íconos hacia la derecha */
+    justify-content: flex-end; 
   }
 
-  /* Opcional: Reducir el tamaño de la fuente para el logo */
   header h1 {
     font-size: 1.3rem;
   }

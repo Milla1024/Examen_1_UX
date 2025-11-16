@@ -68,8 +68,8 @@
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  z-index: 11; /* Asegura que los botones estén por encima de las tarjetas */
-  pointer-events: none; /* Por defecto, no bloquean la interacción */
+  z-index: 11; 
+  pointer-events: none; 
 }
 
 .navBtn {
@@ -80,9 +80,9 @@
   font-size: 24px;
   cursor: pointer;
   transition: background-color 0.3s;
-  pointer-events: auto; /* Asegura que los botones sean interactivos solo cuando pasas el mouse */
+  pointer-events: auto; 
 }
 
 .buttons:hover {
-  pointer-events: auto; /* Habilita la interacción solo cuando el cursor está sobre los botones */
+  pointer-events: auto; 
 }
