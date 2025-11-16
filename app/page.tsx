@@ -15,79 +15,103 @@ export default function Page() {
   ];
 
   return (
-    <main style={{ background: '#000', minHeight: '100vh', color: '#fff', padding: 20 }}>
-      <header style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+    <main style={{ background: '#000', minHeight: '100vh', color: '#fff', position: "relative" }}>
+
+      {/* NAVBAR ENCIMA DE TODO */}
+      <header
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          zIndex: 10,
+          padding: "20px",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <NavBar />
       </header>
 
-        <section style={{ marginTop: 20, position: "relative" }}>
-          <div style={{ width: '100%', height: 380, position: 'relative', overflow: 'hidden', borderRadius: 6 }}>
-            <img src="https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.6)' }} />
+      {/* HERO */}
+      <section style={{ position: "relative" }}>
+        <div style={{ width: "100%", height: "420px", position: "relative", overflow: "hidden" }}>
 
-            <div
-              style={{
-                position: "absolute",
-                top: "40%",
-                left: "5%",
-                transform: "translateY(-40%)",
-                color: "#fff",
-                maxWidth: "40%",
-                display: "flex",
-                flexDirection: "column",
-                gap: 20,
-              }}
-            >
-              <img
-                src="/mondongoTitulo.png" 
-                alt="title"
-                style={{ width: "50%", marginBottom: 10 }}
-              />
+          {/* Imagen cubriendo también el área del navbar */}
+          <img
+            src="https://i.ytimg.com/vi/16uJ-jxcKHo/hqdefault.jpg"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              filter: "brightness(0.55)"
+            }}
+          />
 
-              {/* BOTONES */}
-              <div style={{ display: "flex", gap: 12 }}>
-                {/* Reproducir */}
-                <button
-                  style={{
-                    background: "#fff",
-                    color: "#000",
-                    border: "none",
-                    padding: "12px 26px",
-                    borderRadius: 6,
-                    fontSize: "1.1rem",
-                    fontWeight: "600",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 10,
-                    cursor: "pointer",
-                  }}
-                >
-                  ▶ Reproducir
-                </button>
+          {/* CONTENIDO DEL HERO */}
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "5%",
+              transform: "translateY(-50%)",
+              color: "#fff",
+              maxWidth: "40%",
+              display: "flex",
+              flexDirection: "column",
+              gap: 20,
+            }}
+          >
+            <img
+              src="/mondongoTitulo.png"
+              alt="title"
+              style={{ width: "50%", marginBottom: 10 }}
+            />
 
-                {/* Más información */}
-                <button
-                  style={{
-                    background: "rgba(109,109,110,0.7)",
-                    color: "#fff",
-                    border: "none",
-                    padding: "12px 26px",
-                    borderRadius: 6,
-                    fontSize: "1.1rem",
-                    fontWeight: "600",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 10,
-                    cursor: "pointer",
-                  }}
-                >
-                  ⓘ Más información
-                </button>
-              </div>
+            {/* BOTONES */}
+            <div style={{ display: "flex", gap: 12 }}>
+              <button
+                style={{
+                  background: "#fff",
+                  color: "#000",
+                  border: "none",
+                  padding: "12px 26px",
+                  borderRadius: 6,
+                  fontSize: "1.1rem",
+                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  cursor: "pointer",
+                }}
+              >
+                ▶ Reproducir
+              </button>
+
+              <button
+                style={{
+                  background: "rgba(109,109,110,0.7)",
+                  color: "#fff",
+                  border: "none",
+                  padding: "12px 26px",
+                  borderRadius: 6,
+                  fontSize: "1.1rem",
+                  fontWeight: "600",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  cursor: "pointer",
+                }}
+              >
+                ⓘ Más información
+              </button>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <CarouselNetflix title="Recomendados para ti" items={items} />
+      <CarouselNetflix title="Recomendados para ti" items={items} />
     </main>
+
   );
 }
