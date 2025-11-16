@@ -31,21 +31,41 @@ export default function NavBar() {
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-        <Button>
-          <img 
-          src="../../../public/campanita.png"
-          alt="campanita"
-          style={{ width: 24, height: 24, objectFit: "cover" }}
-              />
-          </Button>
-        <Button>
-          <img 
-          src="../../../public/user.png"
-          alt="usuario"
-          style={{ width: 24, height: 24, objectFit: "cover" }}
-              />
-          </Button>
-         
+
+        <Button
+          label=""
+          children={
+            <img
+              src="/serch.png"
+              alt="lupita"
+              style={{ width: '100%', height: 24, objectFit: "cover" }}
+            />
+          }
+        />
+
+        <Button label="Niños" />
+
+        <Button
+          label=""
+          children={
+            <img
+              src="/campanita.png"
+              alt="campanita"
+              style={{ width: '100%', height: 24, objectFit: "cover" }}
+            />
+          }
+        />
+
+        <Button
+          label=""
+          children={
+            <img
+              src="/user.png"
+              alt="usuario"
+              style={{ width: '100%', height: 25, objectFit: "fill" }}
+            />
+          }
+        />
       </div>
     </header>
   );

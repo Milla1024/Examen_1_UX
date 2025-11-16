@@ -9,7 +9,7 @@ export default function Button({ label, children }: Props) {
   return (
     <button
       style={{
-        background: "transparent",
+        background: "none",
         border: "none",
         color: "#fff",
         fontSize: "14px",
